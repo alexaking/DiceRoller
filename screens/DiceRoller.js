@@ -64,8 +64,8 @@ class DiceRoller extends Component {
                  </TouchableOpacity>)
             })}
             </View>
-            <View>
-            <WebViewExample />
+            <View style={styles.rollBtn}>
+            <WebViewExample dice={this.state.dice}/>
             </View>
         <View style = {styles.bottom}>
         <NumericInput 
@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
     dice: {
         flexDirection: 'row', 
         flexWrap: 'wrap',
+        opacity: 0.5,
     },
     diceImage:{
         width: 100, 
@@ -130,6 +131,15 @@ const styles = StyleSheet.create({
         textAlign: "center",
         flexDirection: 'row', 
         justifyContent: 'center',
+    },
+    rollBtn: {
+      flex: 1,
+      flexDirection: 'row', 
+      // flexWrap: 'wrap',
+      justifyContent: 'center',
+      alignItems: 'flex-end',
+      // width: 100, 
+      // height: 100
     },
       bottom: {
         flex: 1,

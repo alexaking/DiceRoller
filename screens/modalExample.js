@@ -17,19 +17,19 @@ class ModalExample extends Component {
                onRequestClose = {() => { console.log("Modal has been closed.") } }>
                
                <View style = {styles.modal}>
-                  <Text style = {styles.text}>Modal is open! {this.props.greeting}</Text>
+                  <Text style = {styles.text}>Modal is open! </Text>
 
                   
-                  <TouchableHighlight onPress = {() => {
+                  <c onPress = {() => {
                      this.toggleModal(!this.state.modalVisible)}}>
                      
                      <Text style = {styles.text}>Close Modal</Text>
-                  </TouchableHighlight>
+                  </c>
                </View>
             </Modal>
             
             <TouchableHighlight onPress = {() => {this.toggleModal(true)}}>
-               <Text style = {styles.text}>Roll the Dice!</Text>
+               <Text style = {styles.text}>Roll the Dice! {this.props.dice} </Text>
             </TouchableHighlight>
          </View>
       )
@@ -39,18 +39,20 @@ export default ModalExample
 
 const styles = StyleSheet.create ({
    container: {
-      alignItems: 'center',
-      backgroundColor: '#ede3f2',
-      padding: 100
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ede3f2',
+    width: 200, 
+    height: 100
    },
    modal: {
       flex: 1,
       alignItems: 'center',
+      justifyContent: 'center',
       backgroundColor: 'grey',
       padding: 100
    },
    text: {
       color: '#3f2949',
-      marginTop: 10
    }
 })
