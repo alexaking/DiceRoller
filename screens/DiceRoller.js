@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Image, Button, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, Image, Button, Text, StyleSheet, TouchableOpacity, Alert, Modal } from 'react-native';
 import Dice from "../assets/dice"
 import NumericInput from 'react-native-numeric-input'
+import WebViewExample from './modalExample.js'
  
 class DiceRoller extends Component {
     constructor(props){
@@ -48,6 +49,10 @@ class DiceRoller extends Component {
         console.log("History:", this.state.history)
     }
 
+    displayHistory(history){
+      console.log("history: " + history)
+    }
+
   render() {
     return (
         <View style={styles.container}>
@@ -58,6 +63,9 @@ class DiceRoller extends Component {
              <Text style={styles.diceText}>{dice.name}</Text> 
                  </TouchableOpacity>)
             })}
+            </View>
+            <View>
+            <WebViewExample />
             </View>
         <View style = {styles.bottom}>
         <NumericInput 
